@@ -14,7 +14,7 @@
 		"neos": {
 			"package-key": "Netlogix.Aws.ElasticBeanstalk",
 			"installer-resource-folders": [
-				"Resources/Private/Installer"
+				"Resources/Private/Installer/"
 			]
 		}
 	}
