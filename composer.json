@@ -13,7 +13,9 @@
 	"extra": {
 		"neos": {
 			"package-key": "Netlogix.Aws.ElasticBeanstalk",
-			"installer-resource-folders": "Resources/Private/Installer"
+			"installer-resource-folders": [
+				"Resources/Private/Installer"
+			]
 		}
 	}
 }
