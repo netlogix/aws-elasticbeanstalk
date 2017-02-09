@@ -1,0 +1,24 @@
+# Use ElastiCache as storage backend for sessions and the encryption key.
+# To use this, you need to make sure the environment variables REDIS_HOSTNAME and REDIS_PORT need to point to a redis instance
+# Also a php redis module must be installed
+
+#Flow_Session_Storage:
+#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
+#  backendOptions:
+#    hostname: '%env:REDIS_HOSTNAME%'
+#    port: '%env:REDIS_PORT%'
+#    database: 1
+#
+#Flow_Session_MetaData:
+#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
+#  backendOptions:
+#    hostname: '%env:REDIS_HOSTNAME%'
+#    port: '%env:REDIS_PORT%'
+#    database: 2
+#
+#Flow_Security_Cryptography_HashService:
+#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
+#  backendOptions:
+#    hostname: '%env:REDIS_HOSTNAME%'
+#    port: '%env:REDIS_PORT%'
+#    database: 3

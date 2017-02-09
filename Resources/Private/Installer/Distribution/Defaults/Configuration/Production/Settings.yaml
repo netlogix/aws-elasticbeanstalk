@@ -1,0 +1,20 @@
+TYPO3:
+  Flow:
+    persistence:
+      backendOptions:
+        # Use db credentials from elastic beanstalk environment
+        dbname: '%env:RDS_DB_NAME%'
+        user: '%env:RDS_USERNAME%'
+        password: '%env:RDS_PASSWORD%'
+        host: '%env:RDS_HOSTNAME%'
+        port: '%env:RDS_PORT%'
+
+    # Prevent errors with invalid symlinks pointing to staging directory
+    resource:
+      targets:
+        localWebDirectoryStaticResourcesTarget:
+          targetOptions:
+             relativeSymlinks: true
+        localWebDirectoryPersistentResourcesTarget:
+          targetOptions:
+            relativeSymlinks: true

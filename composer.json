@@ -1,0 +1,19 @@
+{
+	"description": "Add description here",
+	"type": "neos-package",
+	"require": {
+		"typo3/flow": "*"
+	},
+	"name": "netlogix/aws-elasticbeanstalk",
+	"autoload": {
+		"psr-0": {
+			"Netlogix\\Aws\\ElasticBeanstalk": "Classes/"
+		}
+	},
+	"extra": {
+		"neos": {
+			"package-key": "Netlogix.Aws.ElasticBeanstalk",
+			"installer-resource-folders": "Resources/Private/Installer"
+		}
+	}
+}
