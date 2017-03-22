@@ -1,6 +1,7 @@
-# Use ElastiCache as storage backend for sessions and the encryption key.
+# Use ElastiCache as storage backend for sessions
 # To use this, you need to make sure the environment variables REDIS_HOSTNAME and REDIS_PORT need to point to a redis instance
 # Also a php redis module must be installed
+# The encryption key must be persistent and equal across instances, therefore use a PDO cache for it.
 
 #Flow_Session_Storage:
 #  backend: TYPO3\Flow\Cache\Backend\RedisBackend
@@ -15,10 +16,13 @@
 #    hostname: '%env:REDIS_HOSTNAME%'
 #    port: '%env:REDIS_PORT%'
 #    database: 2
-#
-#Flow_Security_Cryptography_HashService:
-#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
-#  backendOptions:
-#    hostname: '%env:REDIS_HOSTNAME%'
-#    port: '%env:REDIS_PORT%'
-#    database: 3
+
+Flow_Security_Cryptography_HashService:
+  backend: Netlogix\Aws\ElasticBeanstalk\Cache\Backend\PdoBackend
+  backendOptions:
+    # Setting default lifetime is essential, otherwise the encryption key would only be valid for one hour.
+    # By default Flow uses a file cache backend without lifetime support, but PDO backend supports lifetime.
+    defaultLifetime: 0
+    dataSourceName: 'mysql:host=%env:RDS_HOSTNAME%;port=%env:RDS_PORT%;dbname=%env:RDS_DB_NAME%'
+    username: '%env:RDS_USERNAME%'
+    password: '%env:RDS_PASSWORD%'

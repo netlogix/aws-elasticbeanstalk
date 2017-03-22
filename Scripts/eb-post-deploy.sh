@@ -9,6 +9,8 @@ set -u
 
 export FLOW_CONTEXT=Production
 
+./flow setup:cache
+./flow flow:cache:flush
 ./flow flow:cache:warmup
 ./flow resource:publish --collection static
 ./flow doctrine:migrate
