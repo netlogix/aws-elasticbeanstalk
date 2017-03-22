@@ -17,5 +17,8 @@
 				"Resources/Private/Installer/"
 			]
 		}
+	},
+	"suggest": {
+		"flownative/aws-s3": "Allows storing of persistent resources on AWS S3"
 	}
 }
