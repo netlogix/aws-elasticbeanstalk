@@ -2,7 +2,7 @@
 
 DIST_NAME="${DIST_NAME:-$(basename $(command cd "$(dirname "${BASH_SOURCE[0]}")" && pwd | sed -E 's~(^|/)Packages/Application/Netlogix.Aws.ElasticBeanstalk/Scripts~~'))}"
 VERSION="${VERSION:-$(date +%Y%m%d%H%M%S)}"
-ZIP="${DIST_NAME}-${VERSION}.zip"
+ZIP="${ZIP:-${DIST_NAME}-${VERSION}.zip}"
 
 echo "Packaging ${DIST_NAME}..."
 
