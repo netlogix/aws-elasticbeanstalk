@@ -7,7 +7,7 @@
 	"name": "netlogix/aws-elasticbeanstalk",
 	"autoload": {
 		"psr-4": {
-			"Netlogix\\Aws\\ElasticBeanstalk": "Classes/"
+			"Netlogix\\Aws\\ElasticBeanstalk\\": "Classes/"
 		}
 	},
 	"extra": {
