@@ -12,4 +12,4 @@ export FLOW_CONTEXT=Production
 ./flow setup:cache
 ./flow flow:cache:flush
 ./flow flow:cache:warmup
-./flow resource:publish
+php -dmemory_limit=512M ./flow resource:publish
