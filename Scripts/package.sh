@@ -6,6 +6,6 @@ ZIP="${ZIP:-${DIST_NAME}-${VERSION}.zip}"
 
 echo "Packaging ${DIST_NAME}..."
 
-zip -r "${ZIP}" .ebextensions/ Build/ Configuration/ flow Packages/ Web/.htaccess Web/index.php Web/_Resources/.htaccess composer.json composer.lock -x '*.git*' '*node_modules*'
+zip -r "${ZIP}" .ebextensions/ Build/ Configuration/ flow Packages/ Web/.htaccess Web/index.php Web/healthcheck.php Web/_Resources/.htaccess composer.json composer.lock -x '*.git*' '*node_modules*'
 
 echo "Created ${ZIP}"
