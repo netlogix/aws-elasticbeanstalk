@@ -36,10 +36,7 @@ class WorkerController extends ActionController
 	{
 		$job = unserialize($payload);
 		if ($job instanceof JobInterface) {
-			$receiveCount = 0;
-			if ($this->request->getHttpRequest()->hasHeader('X-aws-sqsd-receive-count')) {
-				$receiveCount = $this->request->getHttpRequest()->getHeaders()->get('X-aws-sqsd-receive-count');
-			}
+			$receiveCount = intval($this->getHeaderOrDefault('X-Aws-Sqsd-Receive-Count', 0));
 			$message = new Message(Algorithms::generateUUID(), serialize($job), $receiveCount);
 			$result = Scripts::executeCommand('flowpack.jobqueue.common:job:execute', $this->flowSettings, true, [
 				$queue,
@@ -53,6 +50,22 @@ class WorkerController extends ActionController
 		} else {
 			throw new \Exception('Not a valid Job', 1501078167);
 		}
+	}
+
+	/**
+	 * @param string $header
+	 * @param mixed $default
+	 * @return mixed
+	 */
+	protected function getHeaderOrDefault($header, $default)
+	{
+		foreach ([$header, strtolower($header)] as $header) {
+			if ($this->request->getHttpRequest()->hasHeader($header)) {
+				return $this->request->getHttpRequest()->getHeaders()->get($header);
+			}
+		}
+
+		return $default;
 	}
 
 }
