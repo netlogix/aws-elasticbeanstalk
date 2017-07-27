@@ -2,7 +2,8 @@
 	"description": "Add description here",
 	"type": "neos-package",
 	"require": {
-		"typo3/flow": "*"
+		"typo3/flow": "*",
+		"flowpack/jobqueue-common": "^1.0"
 	},
 	"name": "netlogix/aws-elasticbeanstalk",
 	"autoload": {
