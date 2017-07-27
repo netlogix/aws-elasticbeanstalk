@@ -13,7 +13,7 @@ class Package extends BasePackage
 {
 	public function boot(Bootstrap $bootstrap)
 	{
-		$versionFile = FLOW_PATH_TEMPORARY . 'Version.txt';
+		$versionFile = 'Version.txt';
 		if (file_exists($versionFile)) {
 			$version = file_get_contents($versionFile);
 			define('DEPLOYMENT_VERSION', $version);
