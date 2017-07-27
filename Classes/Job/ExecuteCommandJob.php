@@ -33,7 +33,7 @@ class ExecuteCommandJob implements JobInterface
 	 */
 	protected $arguments;
 
-	public function __construct($command, array $arguments)
+	public function __construct($command, array $arguments = [])
 	{
 		$this->command = $command;
 		$this->arguments = $arguments;
