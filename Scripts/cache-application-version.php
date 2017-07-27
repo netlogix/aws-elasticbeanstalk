@@ -5,7 +5,7 @@
  */
 
 const MANIFEST_PATH = '/opt/elasticbeanstalk/deploy/manifest';
-const CACHE_PATH = 'Data/Temporary/Production/Version.txt';
+const CACHE_PATH = 'Version.txt';
 
 if (file_exists(MANIFEST_PATH)) {
 	$manifestJson = file_get_contents(MANIFEST_PATH);
