@@ -9,3 +9,12 @@ TYPO3:
             pattern: 'Netlogix\Aws\ElasticBeanstalk\RequestPattern\WorkerAccessFromInternet'
             patternOptions: {}
             interceptor:  'AccessDeny'
+
+Flowpack:
+  JobQueue:
+    Common:
+      queues:
+        'awseb-fakequeue':
+          className: 'Flowpack\JobQueue\Common\Queue\FakeQueue'
+          options:
+            async: false
