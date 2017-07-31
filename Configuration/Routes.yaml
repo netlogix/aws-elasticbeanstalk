@@ -1,8 +1,0 @@
--
-  name: 'AWS ElasticBeanstalk Worker - command'
-  uriPattern: 'worker/command'
-  defaults:
-    '@package':    'Netlogix.Aws.ElasticBeanstalk'
-    '@controller': 'Worker'
-    '@action':     'command'
-    '@format':     'json'
