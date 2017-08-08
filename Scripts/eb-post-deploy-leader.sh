@@ -13,4 +13,5 @@ export FLOW_CONTEXT=Production
 ./flow flow:cache:flush
 ./flow flow:cache:warmup
 ./flow doctrine:migrate
-php -dmemory_limit=512M ./flow resource:publish
+php -dmemory_limit=512M ./flow resource:publish --collection static
+php -dmemory_limit=512M ./flow resource:publish --collection persistent
