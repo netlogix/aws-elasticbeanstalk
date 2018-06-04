@@ -4,14 +4,14 @@
 # The encryption key must be persistent and equal across instances, therefore use a PDO cache for it.
 
 #Flow_Session_Storage:
-#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
+#  backend: Neos\Cache\Backend\RedisBackend
 #  backendOptions:
 #    hostname: '%env:REDIS_HOSTNAME%'
 #    port: '%env:REDIS_PORT%'
 #    database: 1
 #
 #Flow_Session_MetaData:
-#  backend: TYPO3\Flow\Cache\Backend\RedisBackend
+#  backend: Neos\Cache\Backend\RedisBackend
 #  backendOptions:
 #    hostname: '%env:REDIS_HOSTNAME%'
 #    port: '%env:REDIS_PORT%'

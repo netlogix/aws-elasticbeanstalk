@@ -6,9 +6,9 @@ namespace Netlogix\AWS\ElasticBeanstalk\Command;
  */
 
 use Netlogix\Aws\ElasticBeanstalk\Cache\Backend\PdoBackend;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Cache\CacheManager;
-use TYPO3\Flow\Cli\CommandController;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Cache\CacheManager;
+use Neos\Flow\Cli\CommandController;
 
 class SetupCommandController extends CommandController
 {
