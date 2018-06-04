@@ -6,8 +6,8 @@ namespace Netlogix\Aws\ElasticBeanstalk;
  * This file is part of the Netlogix.Aws.ElasticBeanstalk package.
  */
 
-use TYPO3\Flow\Core\Bootstrap;
-use TYPO3\Flow\Package\Package as BasePackage;
+use Neos\Flow\Core\Bootstrap;
+use Neos\Flow\Package\Package as BasePackage;
 
 class Package extends BasePackage
 {

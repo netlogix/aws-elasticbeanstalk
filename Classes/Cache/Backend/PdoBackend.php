@@ -5,13 +5,13 @@ namespace Netlogix\Aws\ElasticBeanstalk\Cache\Backend;
  * This file is part of the Netlogix.Aws.ElasticBeanstalk package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Persistence\Exception as PersistenceException;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Persistence\Exception as PersistenceException;
 
 /**
  * @Flow\Proxy(false)
  */
-class PdoBackend extends \TYPO3\Flow\Cache\Backend\PdoBackend
+class PdoBackend extends \Neos\Flow\Cache\Backend\PdoBackend
 {
 
 	public function setupCache()
