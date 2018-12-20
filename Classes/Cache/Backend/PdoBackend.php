@@ -16,6 +16,7 @@ class PdoBackend extends \Neos\Flow\Cache\Backend\PdoBackend
 
 	public function setupCache()
 	{
+		$this->connect();
 		if ($this->pdoDriver === 'mysql') {
 			if ($this->databaseHandle->query('SHOW TABLES LIKE \'cache\';')->fetch() === false) {
 				$this->createCacheTables();
