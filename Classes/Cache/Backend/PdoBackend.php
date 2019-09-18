@@ -6,12 +6,11 @@ namespace Netlogix\Aws\ElasticBeanstalk\Cache\Backend;
  */
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Persistence\Exception as PersistenceException;
 
 /**
  * @Flow\Proxy(false)
  */
-class PdoBackend extends \Neos\Flow\Cache\Backend\PdoBackend
+class PdoBackend extends \Neos\Cache\Backend\PdoBackend
 {
 
 	public function setupCache()
