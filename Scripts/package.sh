@@ -12,6 +12,10 @@ if [ -f cron.yaml ] ; then
 	OPTIONAL_INCLUDES+=('cron.yaml')
 fi
 
+if [ -f post-deploy.sh ] ; then
+	OPTIONAL_INCLUDES+=('post-deploy.sh')
+fi
+
 # Create source bundle with relevant files
 # Exclude development files like .git, node_modules and the like
 # Exclude files to install during composer install as .ebextensions are not restricted to root level and these files would modify behaviour of ElasticBeanstalk!

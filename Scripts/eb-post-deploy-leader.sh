@@ -15,3 +15,6 @@ export FLOW_CONTEXT=Production
 ./flow doctrine:migrate
 php -dmemory_limit=512M ./flow resource:publish --collection static
 php -dmemory_limit=512M ./flow resource:publish --collection persistent
+
+# Optionally run post deployment script if added by the project
+[ -f post-deploy.sh ] && ./post-deploy.sh
